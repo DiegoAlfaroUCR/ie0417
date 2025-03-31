@@ -32,21 +32,41 @@ Las 3 herramientas descritas poseen gran utilidad en el desarrollo de proyectos 
 
 ## 2. Marco teórico profundo de Scrum y Kanban
 
-### Scrum
+### [Scrum](https://www.scrum.org/)
 
-Historia y origen de enfoque aquí.
+La metodología que posteriormente sería conocida como Scrum [fue inicialmente planteada](https://www.thescrummaster.co.uk/wp-content/uploads/2016/09/SCRUM-Development-Process-K-Schwaber.pdf) en 1986 por Hirotaka Takeuchi y Ikujiro Nonaka en [*The New New Product Development Game*](https://www.thescrummaster.co.uk/wp-content/uploads/2016/09/The-New-New-Product-Development-Game.pdf), donde estudian casos de metodologías usadas en industrias automobilísticas, de fotocopiado, cámaras, etc para formular su propia metodología. Esta tiene el enfoque de de equipos autoregulados (regido por roles asignados), velocidad y flexibilidad en el diseño (debido a que el proceso de diseño es impredecible) y fases ejecutadas simultáneamente (permitiendo que descubrimientos en fases posteriores influencen el desarrollo de las anteriores). [Ken Schwaber y Jeff Sutherland desarrollarían](https://www.agile42.com/en/blog/scrum-history) este enfoque en [el proceso de desarrollo SCRUM](https://www.thescrummaster.co.uk/scrum/short-history-scrum/) aplicándo los conceptos expuestos por Takeuchi y Nokana en el diseño de software. En años posteriores Schwaber, Sutherland, Kent Beck y otros aplicarían la metodología en sus equipos de trabajo e irían a fundar organizaciones como ScrumAlliance y acreditaciones como Professional Scrum o Certfied Scrum Master. En 2001 varios desarrolladores (incluidos Sutherland y Schwaber) crean el [manifesto de las metodologías ágiles](https://agilemanifesto.org/), entre los principios del mismo se incluyen aspectos del Scrum.
 
-* **Principios fundamentales**
+* **Principios fundamentales:** Diversas fuentes ([SCRUMstudy](https://www.scrumstudy.com/whyscrum/scrum-principles) y [Universidad de Arizona](https://www.uagc.edu/blog/what-is-scrum)) mencionan 6 principios fundamentales para el SCRUM: 
 
-* **Estructura del trabajo**
+  * **Control de procesos empírico**: Debido a que en SCRUM las decisiones se realizan por medio de experimentación, es necesario que todas sean transparentes, inspeccionadas y adaptadas a lo requerido por el equipo y product owner.
+  
+  * **Auto-organización**: Se busca que los desarrolladores se organicen a sí mismos, puesto que si poseen motivación para sí mismos y un sentido de responsabilidad, se pueden organizar más efectivamente que por un manager. 
+  
+  * **Colaboración:** Se advoca que en el proceso de desarrollo los equipos de trabajo y los product owners/accionistas colaboren, permitiendo que los aportes de cada uno influencen en el trabajo del otro.
+  
+  * **Priorización basada en valor:** La metodología se enfoca en entregar productos que generen valor de forma temprana y contínua, para permitir la retroalimentación y dar la mayor cantidad de valor en el tiempo disponible.
+  
+  * **Time-Boxing:** Se proponen lapsos de tiempo máximos para cada tarea, evitando que se tome mucho tiempo en una sola.
+  
+  * **Desarrollo iterativo**: El proceso de desarrollo retoma sus etapas varias veces, asegurando que cambios en los requerimientos sean asesorados y corrigan el curso de desarrollo.
 
-* **Ventajas**
+* **Estructura del trabajo:** El flujo de trabajo en la metodología SCRUM está definido principalmente en las **ceremonias** realizadas entre los miembros del equipo, quienes toman distintos papeles en las mismas según sus **roles** y documentan el trabajo en los distintos **artefactos** del SCRUM. Todos estos aspectos del SCRUM giran en torno del **Sprint**.
 
-* **Limitaciones**
+   * **Sprint:** [Etapa central del método SCRUM](https://www.atlassian.com/agile/scrum/sprints), es un lapso de tiempo definido (time-boxed) en el que se trabaja para completar tareas definidas durante las ceremonias. Suele tener una duración de 1 a 4 semanas y es un proceso repetido varias veces durante el ciclo de desarrollo del proyecto.
 
-* **Casos de uso adecuados**
+   * **Ceremonias:** Siguiendo los principios de colaboración continua y control de procesos empírico, el SCRUM define multiples reuniones (llamadas ceremonias) las cuales permiten discutir requisitos, tareas a realizar en los sprints, recibir retroalimentación del trabajo realizado y mantener control del proceso en general. Se realizan ceremonias de **planeación** (discutir las prioridades del siguiente sprint), **compromiso** (revisar user stories a desarrollar en el sprint), **daily-standup** (mostrar el trabajo/complicaciones diarias), demostración o demo (mostrar las implementacions post-sprint) y **restrospectivas** (discutir lo logrado/fallado en el sprint ya finalizado).
 
-### Kanban
+   * **Roles:** Siguiendo el enfoque de colaboración y autoorganización, SCRUM define [distintos roles dentro del equipo ](https://www.atlassian.com/agile/scrum/roles), cada uno con responsabilidades específicas para garantizar la entrega efectiva del producto. Estos roles se dividen en tres categorías principales y trabajan en conjunto durante los sprints y ceremonias. **Product Owner:** Responsable de maximizar el valor del producto. Gestiona y prioriza el backlog, asegurándose de que el equipo trabaje en lo más importante para los stakeholders. Participa activamente en la planeación del sprint y en la validación de entregables. **Scrum Master:** Facilita la metodología SCRUM, eliminando impedimentos y asegurándose de que el equipo siga las prácticas adecuadas. Actúa como mentor para el equipo, ayuda a coordinar ceremonias y fomenta la mejora continua. **Development Team:** Grupo autoorganizado de profesionales que diseñan, desarrollan, prueban e implementan las funcionalidades del producto. Son responsables de comprometerse con los objetivos del sprint y entregar incrementos funcionales al final del mismo.
+
+   * **Artefactos:** Para asegurar una gestión clara del trabajo y mantener la trazabilidad de los avances, SCRUM define una [serie de artefactos](https://www.atlassian.com/agile/scrum/artifacts) que documentan las tareas, prioridades y progreso del equipo durante los sprints. **Product Backlog:** Lista priorizada de requisitos, características y tareas del producto. Es administrado por el Product Owner y se actualiza continuamente a medida que se identifican nuevas necesidades o se refinan las existentes. **Sprint Backlog:** Subconjunto del Product Backlog que el equipo se compromete a completar en un sprint. Se define en la ceremonia de planeación y se actualiza durante el sprint para reflejar el progreso. **Incremento de Producto:** Resultado tangible al final de un sprint, que consiste en un conjunto de funcionalidades terminadas y listas para su entrega. Debe cumplir con la definición de "hecho" establecida por el equipo.
+
+* **Ventajas:** Existen diversas ventajas de trabajar con la metodología SCRUM sobre un desarrollo desogranizado o incluso con Waterfall. La flexibilidad de la metodología permite responder ante cambios en los requisitos y problemas imprevistos. Las entregas continuas permiten entregar valor constante y la evaluación del proyecto antes de adquirir mucha deuda técnica o perder horas de trabajo en proyectos mal guiados. Todo esto permite mitigar errores de forma temprana y asegurar el producto más acertado a lo buscado posible.
+
+* **Limitaciones:** La principal desventaja de la metodología SCRUM es la alta demanda de tiempo y dedicación que se requiere para cumplir con los requisitos. Las ceremonias involucran una o en varios casos más reuniones por día, y requieren la disponibilidad y colaboración de todos los miembros involucrados en el desarrollo (incluyendo product owners). Además, en casos donde los requisitos son muy simples o fijos, los beneficios de emplear SCRUM se disminuyen considerablemente. Además, se requiere mucha coordinación en los casos de SCRUM a escala.
+
+* **Casos de uso adecuados:** Los [casos de uso más adecuados](https://codewave.com/insights/use-scrum-methodology-in-project-management/) para implementar bajo una metodología SCRUM son aquellos que requieren muchos cambios durante el proceso (como startups), casos provenientes de clientes sin conocimiento de requisitos o con requisitos de gran importancia (empresas sin contexto tecnológico o bancos/aseguradoras) y proyectos que requieran entregas rápidas y constantes (como servicios vigentes que requieran refactorización/migración).
+
+### [Kanban](https://en.wikipedia.org/wiki/Kanban)
 
 
 Historia y origen de enfoque aquí.
