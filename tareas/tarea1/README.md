@@ -69,17 +69,38 @@ La metodología que posteriormente sería conocida como Scrum [fue inicialmente 
 ### [Kanban](https://en.wikipedia.org/wiki/Kanban)
 
 
-Historia y origen de enfoque aquí.
+El método Kanban [tiene sus raíces](https://kanbantool.com/kanban-guide/kanban-history) en el sistema de producción de Toyota, desarrollado por Taiichi Ohno en la década de 1940 para mejorar la eficiencia en la fabricación de automóviles. Inspirado en la forma en que los supermercados gestionaban su inventario para reponer productos según la demanda, Toyota implementó un sistema de tarjetas visuales ("kanban" en japonés) para señalar cuándo era necesario reponer materiales en la línea de producción.
 
-* **Principios fundamentales**
+Con el tiempo, este enfoque se adaptó a la gestión de proyectos y desarrollo de software, principalmente debido al hecho que en la industria se estaban empezando a adoptar metodologías similares a las ágiles. Muchos aspectos de otras metodologías ágiles, como SCRUM, tuvieron influencia en lo que se convertiría el Kanban, por ejemplo [equipos que utilizaban SCRUM boards las emplearon en las Kanban boards](https://kanbantool.com/kanban-guide/kanban-history). En este periodo se adoptó la metodología en diversos equipos, uno de estos Microsoft en donde se aplicó una mezcla de SCRUM y Kanban denominada [Scrumban](https://kanbantool.com/kanban-guide/what-is-scrumban). 
 
-* **Estructura del trabajo**
+* **Principios fundamentales:** El método Kanban se basa en [una serie de principios](https://www.atlassian.com/agile/kanban) que permiten mejorar el flujo de trabajo y la eficiencia en la entrega de valor:
 
-* **Ventajas**
+  *  **Visualizar el trabajo:** Se utiliza un tablero Kanban donde las tareas se representan como tarjetas moviéndose a través de columnas que reflejan distintos estados del flujo de trabajo.
 
-* **Limitaciones**
+  * **Limitar el trabajo en progreso (WIP):** Para evitar sobrecarga y mejorar la entrega continua y designación de recursos, se establecen límites en la cantidad de tareas que pueden estar en desarrollo simultáneamente.
 
-* **Casos de uso adecuados**
+  * **Gestión del flujo:** Se monitorea el tiempo que tardan las tareas en moverse a través del sistema para identificar cuellos de botella y mejorar la eficiencia. Además, en el caso de dependencias entre etapas se evitan interrupciones.
+
+  * **Implementar ciclos de retroalimentación:** Se incorporan revisiones periódicas para evaluar el rendimiento del sistema y realizar ajustes según sea necesario.
+
+  * **Mejorar colaborativamente:**  Se fomenta una cultura de mejora continua basada en experimentación e innovación dentro del equipo.
+
+* **Estructura del trabajo:** Kanban no impone roles específicos dentro del equipo, sino que se [centra en la gestión del flujo de trabajo ](https://www.atlassian.com/agile/project-management/kanban-principles). La estructura principal de Kanban se basa en:
+  * **Tablero Kanban:** Herramienta visual donde las tareas se organizan en columnas que representan los distintos estados del flujo de trabajo, desde "Por hacer" hasta "Hecho".
+
+  * **Tarjetas de trabajo:** Representan tareas o elementos de trabajo, conteniendo información relevante como responsables, prioridades y fechas límite.
+
+  * **Columnas y estados:** Cada columna representa una etapa del proceso, como "Pendiente", "En progreso" y "Completado".
+
+  * **Límites WIP:** Restricciones en la cantidad de tareas permitidas en cada columna para evitar la sobrecarga del equipo y optimizar el flujo.
+
+  * **Métricas y monitoreo:** Se usan indicadores como el tiempo de ciclo y el tiempo de entrega para medir el rendimiento del sistema y realizar ajustes.
+
+* **Ventajas:** Kanban ofrece diversas ventajas en la gestión del trabajo y el desarrollo de software: Se tiene flexibilidad en el orden de desarrollo de funciones, puesto que [no requiere planificación fija de iteraciones](https://www.atlassian.com/agile/kanban), permitiendo cambios de prioridad en cualquier momento.  Se reducen los ciclos de trabajo al enfocarse en el flujo continuo, se minimizan tiempos muertos y se mejora la eficiencia. Comparado con el SCRUM, no se requieren ceremonias formales, reduciendo el tiempo dedicado a reuniones. Se dan mejoras contínuas basadas en métricas y feedback constante para optimizar procesos.
+
+* **Limitaciones:** A pesar de sus beneficios, Kanban también presenta ciertas limitaciones. No posee una estructura definida, pues no impone roles ni planificación fija, lo que puede generar confusión si no hay un equipo familiarizado con la metodología. Requiere compromiso constante para optimizar procesos y adaptarse a cambios. No define iteraciones fijas como Scrum, lo que puede dificultar la planificación, particularmente con clientes cuyos horarios no se acoplan fácilmente con los del equipo de desarrollo.
+
+* **Casos de uso adecuados:** Kanban es ideal para proyectos con requisitos cambiantes y flujos de trabajo continuos, como en mantenimiento y soporte (Equipos de TI y DevOps que manejan tickets de incidentes y correcciones de errores) o  software que requiera entregas continuas. Un caso de uso ideal, pero que es difícil de categorizar, es los proyectos que involucren cambios de prioridades constantes, es decir que las funciones más urgentes cambien durante el proceso y se requiera refactorización del orden de desarrollo.
 
 ## 3. Casos reales de aplicación en la industria
 
