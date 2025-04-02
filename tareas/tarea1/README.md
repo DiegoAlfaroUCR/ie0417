@@ -104,17 +104,17 @@ Con el tiempo, este enfoque se adaptó a la gestión de proyectos y desarrollo d
 
 ## 3. Casos reales de aplicación en la industria
 
-### Caso 1.
+### [Spotify](https://en.wikipedia.org/wiki/Spotify)
 
-* **Marco de trabajo usado**
+* **Marco de trabajo usado:** Según [Henrik Kniberg y Anders Ivarsson](https://blog.crisp.se/wp-content/uploads/2012/11/SpotifyScaling.pdf) en Spotify se siguen los principios de metodologías ágiles, sin seguir una misma metodología en toda la empresa. En cambio, el llamado [Modelo Spotify](https://www.atlassian.com/agile/agile-at-scale/spotify) designa una estructura de equipos o escuadrones, donde cada uno puede escoger la metodología (como SCRUM, Kanban o Scrumban) que sea más apropiada para los desarrolladores. El escuadrón es la unidad básica del modelo (de 6 a 12 personas), con cierta independencia pero siempre respondiendo a las necesidades de un product owner y con la posibilidad de colaborar en una misma función con otros escuadrones formando una tribu (de 40 a 150 personas). Existen otras formas de organización, como los capítulos (equipos de especialistas), gremios (miembros que estan interesados en un tema específico), trios y alianzas.  
 
-* **Herramientas tecnológicas**
+* **Herramientas tecnológicas:** En las descripciones dadas por Henrik Kniberg y Anders Ivarsson, se muestran a miembros de los escuadrones dando presentaciones y en reuniones similares a las dadas en SCRUM (se menciona específicamente reuniones diarias como las daily sit-ups). Se muestra una fotografía de pizarrones con notas pegadas como las usadas en Kanban, donde se indican las tareas realizadas y se categorizan. Estas evidencias son de artículos publicados en 2012, por lo que se puede asumir que Spotify ha reemplazado las reuniones presenciales y notas físicas por herramientas de software que permitan dichas funciones.
 
-* **Metodologías en la cultura organizacional**
+* **Metodologías en la cultura organizacional:** Según se menciona en el artículo, la cultura laboral en Spotify es de autonomía, colaboración cercana con product owners/otros escuadrones y lazos por medio de agrupaciones comunes. Una de las mayores fortalezas del modelo es que cada escuadrón escoge su metodología, pero esto solo funciona porque la cultura en Spotify fue de utilizar/experimentar con metodologías ágiles sin miedo a combinar aspectos de cada una. Se formó una cultura en la compañía donde se trataba a cada escuadrón como un start-up independiente, con contacto directo a los product owners y sin dependencias de otros escuadrones. Esta cultura se fomentó gracias a la disposición de los desarrolladores a participar con el sistema de escuadrones con cierta seriedad y motivación a experimentar con las metodologías usadas.
 
-* **Beneficios/retos**
+* **Beneficios/retos:** Conforme a los beneficios del modelo empleado por Spotify se cita que se realizan menos procesos formales/ceremonias, puesto que los equipos no están forzados a seguir las ceremonias SCRUM, sino que pueden elegir metodos más enfocados en el trabajo. También se cita mayor autonomía para los equipos individuales, algo que era buscado por los empleados de la compañía, puesto que se le permite a los trabajadores escoger la metodología de trabajo con la que tengan mayor comodidad. Sin embargo, el modelo Spotify ha traído retos a otras compañías intentando aplicar/replicar la metodología. Principalmente, se dieron dificultades con la estructura de trabajo capítulo-escuadrón, porque se parece mucho a una organización matricial que requiere confianza en el desarrollador. Si los desarrolladores de la compañía no poseen una cultura de trabajo similar a la de Spotify, el modelo no posee los mismos resulados.
 
-* **Reflexión**
+* **Reflexión:** Algunas compañías eligen crear estructuras/organizaciones nuevas para la distribución de trabajo en sus compañías, lo cual da flexibilidad a los equipos. Además, es posible que dentro de una misma compañía se utilicen metodologías distintas sin que se den conflictos de trabajo. Sin embargo, aún modelos tan aparentemente simples/generales como el de Spotify no son tan fácilmente aplicados en otras instituciones, lo cual indica que la cultura de trabajo es de gran importancia a la hora de ejercer una metodología de diseño. 
 
 
 ### Caso 2.
