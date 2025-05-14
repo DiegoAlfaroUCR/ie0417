@@ -144,11 +144,145 @@ class Deck:
     ·
 ```
 
-## Pregunta 2:
+Ejemplo de uso:
+
+```python
+# Crear el mazo (Singleton)
+deck = Deck()
+
+# Crear participantes usando el Factory Method
+dealer = ParticipantFactory.create_participant("dealer")
+player1 = ParticipantFactory.create_participant("player", name="Alice")
+player2 = ParticipantFactory.create_participant("player", name="Bob")
+
+# Repartir dos cartas a cada jugador y al dealer
+for _ in range(2):
+    player1.take_card()
+    player2.take_card()
+    dealer.take_card()
+
+# Mostrar las cartas de cada participante
+print(f"Cartas de {player1.name}: {[f'{c.rank} de {c.suit}' for c in player1.hands]}")
+print(f"Cartas de {player2.name}: {[f'{c.rank} de {c.suit}' for c in player2.hands]}")
+print(f"Cartas del Dealer: {[f'{c.rank} de {c.suit}' for c in dealer.hands]}")
+
+```
+
+## Pregunta 2: Diseñar un sistema de compra de entradas de cine
+
+La pregunta, tomada de la página [CodeZym](https://codezym.com/question/10) pero también preguntada en [GeeksforGeeks](https://www.geeksforgeeks.org/design-bookmyshow-a-system-design-interview-question/#how-does-bookmyshow-talk-to-theatres) y [Medium](https://medium.com/@prashant558908/solving-top-10-low-level-design-lld-interview-questions-in-2024-302b6177c869) plantea lo siguiente:
+
+> Diseñe un sistema de compra de entradas de cine como BookMyShow. Incluyendo distintos cines, con multiples salas, donde cada ususario puede comprar varios asientos.
+
+El principal reto del problema es poder manejar la información de manera que esté actualizada a la hora de intentar comprar entradas. El sistema debe tener la capacidad de manejar casos donde se agregan nuevas salas en distintos cines, y la eliminación de campos recientemente comprados. La estructura básica incluiría varias entidades que manejan los campos disponibles, cada cine con sus respectivas salas, los cuales se encargan de guardar la información de los campos disponibles. Luego están los clientes que pueden comprar campos de una sala, estos solo deben poder interactuar con la interfaz de la aplicación, no directamente con los cines. Finalmente, la aplicación debe mantener la información actualizada de cada sala, y debe ser capaz de cambiar la disponibilidad de campos que le muestra a los clientes.
 
 ### Solución y patrones propuestos
 
+Se propone el uso del patrón de Observer, el cual es necesario para que la aplicación se mantenga actualizada con la información más reciente. Esta se dará como una clase `ticketApp` que es subscriptora de todos los objetos de la clase `cinema`, los cuales albergan los cambios a los `shows` (películas) y asientos disponibles. Además, están las clases `cliente` las cuales pueden buscar y comprar asientos a travéz de la `ticketApp`. Se considera necesario el uso de este patrón ya que actualizar constantemente la información mostrada por la aplicación sería costoso en término de recursos en runtime, y difícil de implementar conforme crecen la cantidad de cines mostrados en la misma.
+
 ### Implementación en código
+
+Código generado en conjunto con modelos de machine learning.
+
+Se crea la clase `show` para las películas contenidas en cada cine. Incluye el nombre de la película y la cantidad de asientos disponibles. Posee un método para reducir la cantidad de asientos disponibles.
+
+```python
+class Show:
+    def __init__(self, movie_name, seats_available):
+        self.movie_name = movie_name
+        self.seats_available = seats_available
+
+    def reduce_seat(self):
+        if self.seats_available > 0:
+            self.seats_available -= 1
+            return True
+        return False
+```
+
+La clase `cinema` incluye una lista de shows y observadores (instancias de la aplicación). Tiene métodos para agregar shows, observadores, notificar a los observadores y actualizar si un asiento fue comprado. Este implementa la lógica del Subject en el patrón observer.
+
+```python
+class Cinema:
+    def __init__(self, name):
+        self.name = name
+        self.shows = []
+        self.observers = []
+
+    def add_observer(self, observer):
+        self.observers.append(observer)
+
+    def notify_observers(self, show, update_type):
+        for observer in self.observers:
+            observer.update(self.name, show, update_type)
+
+    def add_show(self, movie_name, seats_available):
+        show = Show(movie_name, seats_available)
+        self.shows.append(show)
+        self.notify_observers(show, update_type="new_show")
+
+    def book_seat(self, movie_name):
+        for show in self.shows:
+            if show.movie_name == movie_name and show.reduce_seat():
+                self.notify_observers(show, update_type="seat_booked")
+                return True
+        return False
+```
+
+Luego se agrega la aplicación, la cual se suscribe a las distintas instancias de cines, es actualiza según los cambios hechos y realiza el proceso de comprar un tiquete de parte del cliente. Este implementa la lógica del subscriber en el patrón observer.
+
+```python
+class TicketApp(Observer):
+    def __init__(self):
+        self.show_map = {}  # { cinema_name: [show1, show2, ...] }
+
+    def subscribe_to_cinema(self, cinema):
+        cinema.add_observer(self)
+        self.show_map[cinema.name] = []
+
+    def update(self, cinema_name, show, update_type):
+        if update_type == "new_show":
+            self.show_map[cinema_name].append(show)
+            print(f"[TicketApp] New show added in {cinema_name}: {show.movie_name}")
+        elif update_type == "seat_booked":
+            print(f"[TicketApp] A seat was booked in {cinema_name}: {show.movie_name} ({show.seats_available} left)")
+
+    def book_ticket(self, cinema, movie_name):
+        print(f"[TicketApp] Attempting to book 1 seat for '{movie_name}' at {cinema.name}")
+        return cinema.book_seat(movie_name)
+```
+
+Finalmente, se tiene un template básico de la clase `cliente`, esta requiere mayor desarrollo pero da una idea de la lógica del programa.
+
+```python
+class Client:
+    def __init__(self, name):
+        self.name = name
+
+    def book_movie_ticket(self, app: TicketApp, cinema: Cinema, movie_name: str):
+        # Logic for selecting a movie and booking a ticket via TicketApp
+        pass  # To be implemented
+```
+
+Ejemplo de uso:
+
+```python
+# Crear componentes del sistema
+cinema1 = Cinema("Cineplex")
+cinema2 = Cinema("GrandCinema")
+app = TicketApp()
+
+# Registrar el app como un observer
+app.subscribe_to_cinema(cinema1)
+app.subscribe_to_cinema(cinema2)
+
+# Agregar shows
+cinema1.add_show("Inception", 5)
+cinema2.add_show("Interstellar", 3)
+
+# Crear un cliente que intenta comprar un asiento
+client = Client("Alice")
+app.book_ticket(cinema1, "Inception")  # Books via app (seat count updates)
+```
 
 
 ## Pregunta 3:
