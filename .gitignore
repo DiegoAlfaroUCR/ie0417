@@ -34,3 +34,7 @@
 
 # Pycache
 __pycache__
+
+# Github actions
+build/
+.vscode/

@@ -20,6 +20,7 @@ jobs:
 
     - name: Build and run tests
       run: |
+        cd laboratorios
         cd laboratorio8
         mkdir -p build
         cd build
